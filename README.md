@@ -1,6 +1,6 @@
 # PollenVision
 
-PollenVision é uma plataforma de análise de pólen que oferece serviços tanto para a web quanto para dispositivos móveis. Esta plataforma visa fornecer dados precisos e detalhados sobre concentrações de pólen para ajudar pessoas que sofrem de alergias ou doenças respiratórias.
+PollenVision é uma plataforma de análise de pólen que oferece serviços tanto para a web quanto para dispositivos móveis. Esta plataforma visa fornecer dados precisos e detalhados sobre concentrações de pólen para ajudar a identificar a viabilidade do polén.
 
 ## Estrutura do Projeto
 
