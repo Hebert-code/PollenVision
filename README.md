@@ -50,8 +50,7 @@ pollenvision/
 
 ## Funcionalidades Planejadas
 
-- **Análise de Pólen**: Fornecer dados detalhados sobre os níveis de pólen em diversas áreas geográficas.
-- **Alertas Personalizados**: Notificar usuários sobre níveis críticos de pólen com base em suas preferências.
+- **Análise de Pólen**: Fornecer dados detalhados sobre os níveis de pólen.
 - **Versão Web e Mobile**: Disponível tanto para usuários de desktop quanto para dispositivos móveis.
 - **API REST**: Integração via APIs para fornecer dados de pólen a outros serviços ou aplicativos.
 - **Visualizações Interativas**: Gráficos e mapas para visualizar dados de pólen em tempo real.
@@ -61,7 +60,7 @@ pollenvision/
 1. Clone o repositório do projeto:
 
    ```bash
-   git clone https://github.com/seu-usuario/pollenvision.git
+   git clone https://github.com/Hebert-code/pollenvision.git
    ```
 
 2. Crie e ative um ambiente virtual:
