@@ -119,15 +119,28 @@ nav ul li a {
 }
 
 .produto-card {
+    -webkit-box-shadow: -4px 18px 35px -17px rgba(0,0,0,1);
+    -moz-box-shadow: -4px 18px 35px -17px rgba(0,0,0,1);
+    box-shadow: -4px 18px 35px -17px rgba(0,0,0,1);
+
+
+    border: 1px solid #696868;
+    border-radius: 15px;
     max-width: 300px;
     text-align: center;
+    font-size: 15px;
 }
 
 .produto-card img {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
     width: 100%;
     height: auto;
 }
 
+.produto-card h1{
+    font-size: 20px;
+}
 .team {
     padding: 50px 0;
     text-align: center;
