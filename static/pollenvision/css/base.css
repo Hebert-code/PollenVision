@@ -64,13 +64,42 @@ nav ul li a {
 
 }
 
+#menu-container {
+    position: relative;
+}
+
 .menu-lateral_navegacao {
+    position: absolute;
     display: flex;
     flex-direction: column;
     height: 100vh;
     background-color: #1A1F23;
     width: 250px;
     padding: 10px;
+    left: 0;
+    transition: left 0.3s ease;
+}
+
+#toggleMenu {
+    position: absolute;
+    top: 25px;
+    left: 250px; 
+    transform: translateY(-50%);
+    background-color: #35adff;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    transition: left 0.3s ease;
+    border-radius: 10px;
+}
+
+
+.menu-hidden {
+    left: -250px;
+}
+
+.menu-hidden + #toggleMenu {
+    left: 0; 
 }
 
 .menu-lateral_navegacao a {
@@ -78,11 +107,11 @@ nav ul li a {
     align-items: center;
     color: #FFFFFF;
     text-decoration: none;
-    padding: 16px 0 16px 0;
+    padding: 16px 0;
 }
 
 .menu-lateral_navegacao a:hover {
-    background-color: #2A2F35 ;
+    background-color: #2A2F35;
 }
 
 footer {
