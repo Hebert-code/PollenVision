@@ -148,17 +148,20 @@ nav ul li a {
 }
 
 .team-container {
-    display: grid;
-    justify-content: center;
+    padding: 50px;
+    display: flex;
     flex-wrap: wrap;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 2fr));
-    gap: 20px;
-    
+    justify-content: center;
+
  
     gap: 20px;
 }
 
 .team-member {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     max-width: 150px;
 }
 
