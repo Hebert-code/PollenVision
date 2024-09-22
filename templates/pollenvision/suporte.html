@@ -1,6 +1,47 @@
 {% extends 'pollenvision/base.html' %}
 {% block content %}
-    <div>
-        <h1>Suporte e ajuda</h1>
-    </div>
+    <section class="suporte_header">
+        <div class="suporte_header_conteudo">
+            <h1>Bem-vindo ao Centro de Suporte</h1>
+            <p>Encontre respostas para todas as suas perguntas aqui.</p>
+            <input type="text" placeholder="Procurar ajuda">
+            <button type="submit">Converse com o suporte</button>
+        </div>
+    </section>
+
+    <section class="suporte_topicos">
+        <h1>Tópicos</h1>
+        <div class="suporte_topicos_itens">
+            <div class="suporte_topicos_itens_superiores">
+                <div>
+                    <img src="/static/pollenvision/img/emoji.svg" alt="">
+                    <h5>Consultas sobre faturamento</h5>
+                    <p>Pagamentos e reembolsos</p>
+                </div>
+                <div>
+                    <img src="/static/pollenvision/img/livro.svg" alt="">
+                    <h5>Guia do usuário</h5>
+                    <p>Manuais úteis</p>
+                </div>
+            </div>
+            <div>
+                <img src="/static/pollenvision/img/chave.svg" alt="">
+                <h5>Suporte técnico</h5>
+                <p>Assistência técnica</p>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <section>
+        <h1>Tutoriais</h1>
+        <div>
+            <div>
+                <img src="" alt="">
+                <div>
+                    <a href=""></a>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}

@@ -1,6 +1,45 @@
 {% extends 'pollenvision/base.html' %}
 {% block content %}
-    <div>
-        <h1>Relatórios</h1>
-    </div>
+    <section class="relatorio">
+        <div class="relatorio_titulo">
+            <h1>Gerar relatório</h1><br>
+            <p>Gere relatórios detalhados em formato PDF ou CSV</p>
+        </div>
+        <div class="relatorio_titulo_submit">
+            <div>
+                <label for="Id">Id da Planta</label>
+                <input type="text" placeholder="Opcional">
+
+                <label for="Id">Data Inicial</label>
+                <input type="date">
+
+                <label for="Id">Data final</label>
+                <input type="date">
+            </div>
+        </div>
+
+        <div class="visualizacao">
+            <div class="visualizacao_relatorio">
+                <div>
+                    <h1>Visualização do Relatório</h1>
+                    <p>Visualizar relatórios e visualizar histórico de relatórios</p>
+                </div>
+                <button>Pré-visualização</button>
+                <div class="visualizacao_relatorio_itens">
+                    <div class="visualizacao_relatorio_itens_item">
+                        <p>Relatórios totais</p>
+                        <h1>100</h1>
+                    </div>
+                    <div class="visualizacao_relatorio_itens_item">
+                        <p>Tamanho do relatório</p>
+                        <h1>2 MB</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="viabilidade_grafico">
+
+            </div>
+        </div>
+    </section>
 {% endblock %}

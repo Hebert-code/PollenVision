@@ -1,6 +1,23 @@
 {% extends 'pollenvision/base.html' %}
 {% block content %}
-    <div>
-        <h1>Upload</h1>
-    </div>
+    <section class="upload_container">
+        <div class="upload_container_titulo">
+            <h1>Enviar imagem</h1>
+            <p>Arraste e solte as imagens ou clique no botão abaixo</p>
+        </div>
+        <div class="upload_container_up">
+            <div class="upload_container_arrasta">
+                <img src="/static/pollenvision/img/upload.svg" alt="">
+                <p>Arraste e solte sua imagem aqui</p>
+            </div>
+            <div class="upload_container_up_button">
+                <a href="#">Upload Images</a>
+                <a href="#">Analisar</a>
+            </div>
+        </div>
+        <div class="upload_container_button2">
+            <a href="#">Ver imagem</a>
+            <a href="#">Excluir imagem</a>
+        </div>
+    </section>
 {% endblock %}

@@ -1,6 +1,27 @@
 {% extends 'pollenvision/base.html' %}
 {% block content %}
-    <div>
-        <h1>Resultado</h1>
-    </div>
+    <section class="resultado_container">
+        <img src="/static/pollenvision/img/planta.svg" alt="">
+        <div class="resultado_container_id">
+            <h1>Planta: PM1234</h1>
+            <P>Visão geral dos resultados de análise</P>
+        </div>
+        <div class="resultado_container_result">
+            <div class="resultado_container_result_card">
+                <p>Viabilidade</p>
+                <h1>94%</h1>
+                <p>+2%</p>
+            </div>
+            <div class="resultado_container_result_card">
+                <p>Quantidade de grãos</p>
+                <h1>70</h1>
+                <p>-5</p>
+            </div>
+            <div class="resultado_container_result_card">
+                <p>Taxa de erro</p>
+                <h1>1.5%</h1>
+                <p>-0.2%</p>
+            </div>
+        </div>
+    </section>
 {% endblock %}

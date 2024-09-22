@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+:root{
+    --cor_principal: #1A1F23
+}
+
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
@@ -131,3 +135,498 @@ footer a {
     color: #fff;
     text-decoration: none;
 }
+
+/* Página de dashboard */
+
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    padding: 30px;
+}
+
+.hero-text {
+    max-width: 50%;
+    padding: 50px;
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+}
+
+.hero-image img {
+    width: 500px;
+    border-radius: 15px;
+}
+
+.metricas{
+    display: flex;
+}
+
+.metricas_painel{
+    width: 520px;
+    height: 240px;
+    margin: 60px;
+}
+
+.metricas_painel_cards{
+    margin-top: 60px;
+    display: flex;
+}
+
+.metricas_painel_cards_card{
+    height: 124px;
+    width: 168px;
+    border: 1.5px solid #ccc;
+    border-radius: 6px;
+    margin-right: 20px;
+    padding: 16px;
+    font-size: 14px;
+}
+
+.analises{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.analises_titulo{
+    display: flex;
+    justify-content: space-around;
+    width: 1100px;
+    height: 48px;
+    margin: 40px;
+}
+
+.carrossel_interno{
+    display: flex;
+}
+
+.carrossel_interno_item{
+    width: 340px;
+    height: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.carrossel_interno_item img{
+    width: 100px;
+    height: 100px;
+}
+
+.ajustes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 448px;
+}
+
+.ajustes_titulo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 60px;
+}
+
+.ajustes form{
+    display: flex;
+}
+
+.ajustes button{
+    background-color: var(--cor_principal);
+    border-radius: 8px;
+    padding: 12px 66px 12px 66px;
+    width: 254px;
+    height: 52px;
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 40px;
+}
+
+.final{
+    display: flex;
+    height: 220px;
+    align-items: center;
+    background-color: var(--cor_principal);
+    padding: 60px;
+    color: #fff;
+}
+
+.final img{
+    width: 85px;
+    height: 85px;
+}
+
+.final_conteudo{
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+}
+
+.final_conteudo_itens{
+    display: flex;
+
+}
+
+.final_conteudo_itens_item{
+    height: 25px;
+    width: 60px;
+    background-color: #20A345;
+    font-size: 10px;
+    margin-right: 10px;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    padding: 2px 9px 2px 9px;
+}
+
+/* Página de dashboard */
+
+/* Página de Upload */
+
+.upload_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.upload_container_titulo{
+    height: 96px;
+    margin: 60px 0 60px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.upload_container_up{
+    display: flex;
+    height: 530px;
+    align-items: center;
+}
+
+.upload_container_arrasta{
+    width: 589px;
+    height: 410px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto;
+    font-size: 24px;
+    color: #000000;
+    background-color: #20A345;
+    border-radius: 33px;
+}
+
+.upload_container_up_button{
+    display: flex;
+    flex-direction: column;
+    margin-left: 164px;
+}
+
+.upload_container_up_button a{
+    background-color: var(--cor_principal);
+    border-radius: 8px;
+    padding: 12px 66px 12px 66px;
+    width: 240px;
+    height: 48px;
+    margin-bottom: 41px;
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.upload_container_button2{
+    display: flex;
+}
+
+.upload_container_button2 a{
+    background-color: var(--cor_principal);
+    border-radius: 8px;
+    padding: 12px 66px 12px 66px;
+    width: 254px;
+    height: 52px;
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 40px;
+
+}
+
+/* Página de Upload */ 
+
+
+
+
+/* Página de historico */ 
+
+.historico{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 420px;
+    align-items: center;
+}
+
+.historico_containers{
+    display: flex;
+    flex-direction: column;
+}
+
+.historico_container{
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    width: 520px;
+    padding: 24px 0 24px 0;
+    align-items: center;
+}
+
+.historico_container img{
+    height: 60px;
+    width: 60px;
+}
+
+.historico_container_analise{
+    height: 52px;
+    width: 308px;
+    padding: 4px 16px 4px 16px;
+}
+
+.historico form{
+    display: flex;
+    flex-direction: column;
+}
+
+.historico label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.historico input {
+    width: 520px;
+    height: 44px;
+    border: 1px solid #ddd;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+    margin-bottom: 40px;
+}
+
+.historico button {
+    width: 240px;
+    height: 48px;
+    padding: 12px 89px 12px 89px;
+    background-color: #171F22;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Página de historico */ 
+
+
+
+
+/* Página de Resultado */ 
+
+.resultado_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.resultado_container img{
+    width: 100px; 
+    height: 100px;
+    margin: 60px 0 60px 0 ;
+}
+
+.resultado_container_id{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 60px;
+}
+
+.resultado_container_result{
+    display: flex;
+    margin-bottom: 60px;
+}
+
+.resultado_container_result_card{
+    height: 124px;
+    width: 280px;
+    border: 1.5px solid #ccc;
+    border-radius: 6px;
+    margin-right: 20px;
+    padding: 16px;
+}
+
+/* Página de Resultado */ 
+
+
+
+/* Página de relatorios */
+
+.relatorio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.relatorio_titulo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 216px;
+    padding: 60px 0 60px 0;
+}
+
+.relatorio_titulo_submit{
+    height: 376px;
+}
+
+.visualizacao{
+    display: flex;
+    align-items: center;
+    height: 444px;
+}
+
+.visualizacao_relatorio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 324px;
+    width: 520px;
+    border: 1.5px solid #ccc;
+    border-radius: 3px;
+    padding: 10px;
+    margin-right: 60px;
+}
+
+.visualizacao_relatorio button{
+    margin-top: 24px;
+    width: 240px;
+    height: 48px;
+    padding: 12px 60.5px 12px 60.5px;
+    background-color: #171F22;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.visualizacao_relatorio_itens{
+    display: flex;
+    margin-top: 60px;
+}
+
+.visualizacao_relatorio_itens_item{
+    height: 96px;
+    width: 200px;
+    padding: 16px;
+    border: 1px solid #ccc;
+    margin-right: 20px;
+}
+
+.viabilidade_grafico{
+    height: 324px;
+    width: 520px;
+    border: 1.5px solid #ccc;
+}
+
+/* Página de relatorios */
+
+/* Página de suporte */
+
+.suporte_header{
+    background-color: #20A345;
+    height: 392px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+
+}
+
+.suporte_header_conteudo{
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.suporte_header_conteudo h1{
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 24px;
+}
+
+.suporte_header_conteudo p{
+    font-size: 16px;
+    margin-bottom: 24px;
+}
+
+.suporte_header_conteudo input{
+    height: 36px;
+    width: 360px;
+    border-radius: 6px;
+    padding: 8px 12px 8px 12px;
+    margin-bottom: 24px;
+}
+
+.suporte_header_conteudo button{
+    width: 240px;
+    height: 48px;
+    padding: 12px 32.5px 12px 32.5px;
+    background-color: #171F22;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.suporte_topicos{
+    height: 596px;
+    display: flex;
+    align-items: center;
+}
+
+.suporte_topicos_itens{
+    display: flex;
+    margin-right: 40px;
+
+}
+
+.suporte_topicos_itens_superiores{
+    display: flex;
+    height: 232px;
+    width: 240px;
+    align-items: center;
+}
+
+/* Página de suporte */
