@@ -1,0 +1,72 @@
+
+.relatorio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.relatorio_titulo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 216px;
+    padding: 60px 0 60px 0;
+}
+
+.relatorio_titulo_submit{
+    height: 376px;
+}
+
+.visualizacao{
+    display: flex;
+    align-items: center;
+    height: 444px;
+}
+
+.visualizacao_relatorio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 324px;
+    width: 520px;
+    border: 1.5px solid #ccc;
+    border-radius: 3px;
+    padding: 10px;
+    margin-right: 60px;
+}
+
+.visualizacao_relatorio button{
+    margin-top: 24px;
+    width: 240px;
+    height: 48px;
+    padding: 12px 60.5px 12px 60.5px;
+    background-color: #171F22;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.visualizacao_relatorio_itens{
+    display: flex;
+    margin-top: 60px;
+}
+
+.visualizacao_relatorio_itens_item{
+    height: 96px;
+    width: 200px;
+    padding: 16px;
+    border: 1px solid #ccc;
+    margin-right: 20px;
+}
+
+.viabilidade_grafico{
+    height: 324px;
+    width: 520px;
+    border: 1.5px solid #ccc;
+}

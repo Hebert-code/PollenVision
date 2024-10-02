@@ -1,0 +1,66 @@
+.suporte_header{
+    background-color: #20A345;
+    height: 392px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+
+}
+
+.suporte_header_conteudo{
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.suporte_header_conteudo h1{
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 24px;
+}
+
+.suporte_header_conteudo p{
+    font-size: 16px;
+    margin-bottom: 24px;
+}
+
+.suporte_header_conteudo input{
+    height: 36px;
+    width: 360px;
+    border-radius: 6px;
+    padding: 8px 12px 8px 12px;
+    margin-bottom: 24px;
+}
+
+.suporte_header_conteudo button{
+    width: 240px;
+    height: 48px;
+    padding: 12px 32.5px 12px 32.5px;
+    background-color: #171F22;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.suporte_topicos{
+    height: 596px;
+    display: flex;
+    align-items: center;
+}
+
+.suporte_topicos_itens{
+    display: flex;
+    margin-right: 40px;
+
+}
+
+.suporte_topicos_itens_superiores{
+    display: flex;
+    height: 232px;
+    width: 240px;
+    align-items: center;
+}
