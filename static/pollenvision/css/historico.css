@@ -4,6 +4,7 @@
     justify-content: space-around;
     height: 420px;
     align-items: center;
+    margin-bottom: 60px;
 }
 
 .historico_containers{
@@ -29,11 +30,6 @@
     height: 52px;
     width: 308px;
     padding: 4px 16px 4px 16px;
-}
-
-.historico form{
-    display: flex;
-    flex-direction: column;
 }
 
 .historico label {
@@ -63,4 +59,27 @@
     border: none;
     border-radius: 8px;
     cursor: pointer;
+}
+
+.form-historico{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.form-historico-campos-campo{
+    width: 520px;
+    height: 64px;
+    margin-bottom: 40px;
+    color: #000;
+}
+
+.form-historico-campos-campo input[type="text"],
+.form-historico-campos-campo input[type="date"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
 }

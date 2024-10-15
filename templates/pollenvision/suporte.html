@@ -8,40 +8,52 @@
             <button type="submit">Converse com o suporte</button>
         </div>
     </section>
-
-    <section class="suporte_topicos">
-        <h1>Tópicos</h1>
-        <div class="suporte_topicos_itens">
-            <div class="suporte_topicos_itens_superiores">
-                <div>
-                    <img src="/static/pollenvision/img/emoji.svg" alt="">
-                    <h5>Consultas sobre faturamento</h5>
+    <!-- Seção de Tópicos -->
+    <section class="topics">
+        <h2>Tópicos</h2>
+        <div class="topic-container">
+            <div class="topic-container-cards">
+                <div class="topic-card">
+                    <span class="emoji">😊</span>
+                    <h3>Consultas sobre faturamento</h3>
                     <p>Pagamentos e reembolsos</p>
                 </div>
-                <div>
-                    <img src="/static/pollenvision/img/livro.svg" alt="">
-                    <h5>Guia do usuário</h5>
+    
+                <div class="topic-card">
+                    <span class="emoji">📖</span>
+                    <h3>Guia do usuário</h3>
                     <p>Manuais úteis</p>
-                </div>
+                    </div>
             </div>
-            <div>
-                <img src="/static/pollenvision/img/chave.svg" alt="">
-                <h5>Suporte técnico</h5>
+            <div class="topic-card">
+                <span class="emoji">🔧</span>
+                <h3>Suporte técnico</h3>
                 <p>Assistência técnica</p>
             </div>
         </div>
     </section>
     <hr>
-    <section>
-        <h1>Tutoriais</h1>
-        <div>
-            <div>
-                <img src="" alt="">
-                <div>
-                    <a href=""></a>
-                    
-                </div>
+        <!-- Seção de Tutoriais -->
+        <section class="tutorials">
+            <h2>Tutoriais</h2>
+            <div class="tutorial-container">
+                <a href="https://www.youtube.com/watch?v=EXEMPLO1" class="tutorial-card">
+                    <img src="/static/pollenvision/img/youtube.png" alt="Ícone do YouTube">
+                    <h3>Como personalizar as configurações</h3>
+                    <p>Personalize sua experiência</p>
+                </a>
+    
+                <a href="https://www.youtube.com/watch?v=EXEMPLO2" class="tutorial-card">
+                    <img src="/static/pollenvision/img/youtube.png" alt="Ícone do YouTube">
+                    <h3>Como usar a plataforma</h3>
+                    <p>Aprenda a utilizar a plataforma</p>
+                </a>
+    
+                <a href="https://www.youtube.com/watch?v=EXEMPLO3" class="tutorial-card">
+                    <img src="/static/pollenvision/img/youtube.png" alt="Ícone do YouTube">
+                    <h3>Dicas e truques avançados</h3>
+                    <p>Aumentar a produtividade</p>
+                </a>
             </div>
-        </div>
-    </section>
+        </section>
 {% endblock %}

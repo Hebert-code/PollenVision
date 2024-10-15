@@ -89,7 +89,7 @@ nav ul li a {
     top: 25px;
     left: 250px; 
     transform: translateY(-50%);
-    background-color: #35adff;
+    background-color: #1A1F23;
     color: #fff;
     padding: 10px;
     cursor: pointer;
@@ -116,6 +116,11 @@ nav ul li a {
 
 .menu-lateral_navegacao a:hover {
     background-color: #2A2F35;
+}
+
+.menu-lateral_navegacao i {
+    font-size: 24px;
+    margin: 0px 15px 0px 10px;
 }
 
 footer {
