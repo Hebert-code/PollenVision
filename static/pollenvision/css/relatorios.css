@@ -1,0 +1,151 @@
+
+.relatorio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.relatorio_titulo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 216px;
+    padding: 60px 0 60px 0;
+}
+
+
+.form-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-relatorio{
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 100vh;
+    max-width: 900px;
+}
+
+.form-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+}
+
+.date-interval {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.date-interval button {
+    background-color: #e9ecef;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.date-interval button:hover {
+    background-color: #ced4da;
+}
+
+.form-footer {
+    display: flex;
+    justify-content: center;
+}
+
+.generate-btn {
+    background-color: #212529;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 40px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.generate-btn:hover {
+    background-color: #343a40;
+}
+
+.visualizacao{
+    display: flex;
+    align-items: center;
+    height: 444px;
+}
+
+.visualizacao_relatorio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 324px;
+    width: 520px;
+    border: 1.5px solid #ccc;
+    border-radius: 3px;
+    padding: 10px;
+    margin-right: 60px;
+}
+
+.visualizacao_relatorio button{
+    margin-top: 24px;
+    width: 240px;
+    height: 48px;
+    padding: 12px 60.5px 12px 60.5px;
+    background-color: #171F22;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.visualizacao_relatorio_itens{
+    display: flex;
+    margin-top: 60px;
+}
+
+.visualizacao_relatorio_itens_item{
+    height: 96px;
+    width: 200px;
+    padding: 16px;
+    border: 1px solid #ccc;
+    margin-right: 20px;
+}
+
+.viabilidade_grafico{
+    height: 324px;
+    width: 520px;
+    border: 1.5px solid #ccc;
+}
