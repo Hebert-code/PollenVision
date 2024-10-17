@@ -1,50 +1,40 @@
 {% extends "account/base_entrance.html" %}
 {% load i18n %}
 {% load allauth account %}
-{% block head_title %}
-    {% trans "Sign In" %}
-{% endblock head_title %}
+
+
 {% block content %}
 
-<link rel="stylesheet" href="/static/account/css/login.css"> 
-<div class="signin-container">
-  
-    <h1 class="signin-title">{% trans "Sign In" %}</h1>
-    {% if not SOCIALACCOUNT_ONLY %}
-        <p class="signup-prompt">
-            {% blocktranslate %}If you have not created an account yet, then please <a href="{{ signup_url }}">sign up</a> first.{% endblocktranslate %}
-        </p>
-        {% url 'account_login' as login_url %}
-        <form method="post" action="{{ login_url }}" class="signin-form">
-            {% csrf_token %}
-            {{ form.as_p }}
-            {{ redirect_field }}
-            <button type="submit" class="btn btn-primary">{% trans "Sign In" %}</button>
-        </form>
-    {% endif %}
-    {% if LOGIN_BY_CODE_ENABLED or PASSKEY_LOGIN_ENABLED %}
-        <div class="alternative-login">
-            <hr>
-            <div class="button-group">
-                {% if PASSKEY_LOGIN_ENABLED %}
-                    <button type="submit" form="mfa_login" id="passkey_login" class="btn btn-outline">{% trans "Sign in with a passkey" %}</button>
-                {% endif %}
-                {% if LOGIN_BY_CODE_ENABLED %}
-                    <a href="{{ request_login_code_url }}" class="btn btn-outline">{% trans "Mail me a sign-in code" %}</a>
-                {% endif %}
-            </div>
-        </div>
-    {% endif %}
-    {% if SOCIALACCOUNT_ENABLED %}
-        {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
-    {% endif %}
-</div>
-{% endblock content %}
-{% block extra_body %}
-    {{ block.super }}
-    {% if PASSKEY_LOGIN_ENABLED %}
-        {% include "mfa/webauthn/snippets/login_script.html" with button_id="passkey_login" %}
-    {% endif %}
-{% endblock %}
-<script src="/static/account/js/login.js"></script>
+<link rel="stylesheet" href="/static/account/css/login.css">
+<div class="login-container">
+    <div class="logo-container">
+        <img src="/static/home/img/hero_logo.png" alt="PollenVision Logo">
+    </div>
 
+    <form method="post" action="{% url 'account_login' %}" class="login-form">
+        {% csrf_token %}
+        <div class="input-group">
+            <label for="username">{% trans "Nome de usuário" %}</label>
+            <input type="text" id="username" name="login" placeholder="{% trans 'Entre com seu nome de usuário' %}" required>
+        </div>
+
+        <div class="input-group">
+            <label for="password">{% trans "Senha" %}</label>
+            <input type="password" id="password" name="password" placeholder="{% trans 'Coloque sua senha' %}" required>
+        </div>
+
+        <button type="submit" class="btn-login">{% trans "Conecte-se" %}</button>
+        <div class="social-login-">
+        {% if SOCIALACCOUNT_ENABLED %}
+            {% include "socialaccount/snippets/login.html" %}
+        {% endif %}
+        </div>
+    </form>
+
+</div>
+
+{% endblock content %}
+
+{% block extra_body %}
+<script src="account/js/login.js"></script>
+{% endblock extra_body %}
