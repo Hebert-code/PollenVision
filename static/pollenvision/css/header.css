@@ -20,14 +20,13 @@ nav ul li a {
     text-decoration: none;
 }
 
-
+/* Estilos do menu hamburguer */
 .menu-hamburguer {
     display: none;
     font-size: 30px;
     cursor: pointer;
     color: #fff;
 }
-
 @media (max-width: 768px) {
     .menu-hamburguer {
         display: block;
