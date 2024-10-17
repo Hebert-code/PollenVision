@@ -1,35 +1,35 @@
-.historico{
+.historico {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    height: 420px;
+    flex-direction: column;
     align-items: center;
     margin-bottom: 60px;
 }
 
-.historico_containers{
+.historico_containers {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
-.historico_container{
+.historico_container {
     display: flex;
     flex-direction: row;
     height: 100px;
-    width: 520px;
-    padding: 24px 0 24px 0;
+    padding: 24px 0;
     align-items: center;
+    width: 100%;
+    justify-content: space-between;
 }
 
-.historico_container img{
+.historico_container img {
     height: 60px;
     width: 60px;
 }
 
-.historico_container_analise{
+.historico_container_analise {
     height: 52px;
-    width: 308px;
-    padding: 4px 16px 4px 16px;
+    padding: 4px 16px;
+    flex: 1;
 }
 
 .historico label {
@@ -40,7 +40,7 @@
 }
 
 .historico input {
-    width: 520px;
+    width: 100%;
     height: 44px;
     border: 1px solid #ddd;
     padding: 12px;
@@ -53,7 +53,7 @@
 .historico button {
     width: 240px;
     height: 48px;
-    padding: 12px 89px 12px 89px;
+    padding: 12px 0;
     background-color: #171F22;
     color: #fff;
     border: none;
@@ -61,18 +61,20 @@
     cursor: pointer;
 }
 
-.form-historico{
+.form-historico {
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
 
-.form-historico-campos-campo{
-    width: 520px;
-    height: 64px;
+.form-historico-campos {
+    width: 100%;
+    max-width: 520px;
+}
+
+.form-historico-campos-campo {
+    width: 100%;
     margin-bottom: 40px;
-    color: #000;
 }
 
 .form-historico-campos-campo input[type="text"],
@@ -82,4 +84,37 @@
     border-radius: 5px;
     font-size: 16px;
     width: 100%;
+}
+
+@media (max-width: 768px) {
+    .historico {
+        padding: 0 16px;
+    }
+
+    .historico_container {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .historico_container_analise {
+        justify-content: space-between;
+        flex-direction: row;
+        height: auto;
+    }
+
+    .historico_container h3 {
+        margin-top: 8px;
+    }
+
+    .historico button {
+        width: 100%;
+    }
+
+    .form-historico-campos {
+        padding: 0 16px;
+    }
+
+    .form-historico-campos-campo {
+        margin-bottom: 24px;
+    }
 }
