@@ -24,6 +24,12 @@
         </div>
 
         <button type="submit" class="btn-login">{% trans "Conecte-se" %}</button>
+        
+        <div class="redirect-signup">
+            <p>{% trans "Não possui conta?" %} 
+                <a href="{% url 'account_signup' %}">{% trans "Cadastre-se" %}</a>
+            </p>
+        </div>
         <div class="social-login-">
         {% if SOCIALACCOUNT_ENABLED %}
             {% include "socialaccount/snippets/login.html" %}

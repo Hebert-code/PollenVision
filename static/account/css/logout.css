@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+}
+
+.logout-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    text-align: center;
+}
+
+.logout-container h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.logout-container p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.logout-form {
+    width: 300px;
+}
+
+.btn-logout {
+    width: 100%;
+    padding: 15px;
+    background-color: #d9534f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-logout:hover {
+    background-color: #c9302c;
+}
