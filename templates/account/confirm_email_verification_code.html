@@ -1,48 +1,47 @@
-{% extends "account/base_entrance.html" %}
+
 {% load i18n %}
 {% load allauth account %}
-{% block head_title %}
-    {% translate "Email Verification" %}
-{% endblock head_title %}
+
+<link rel="stylesheet" href="/static/account/css/email_verification.css">
+{% include 'home/headerbase.html' %}
+
+
+
 {% block content %}
-    {% element h1 %}
-        {% translate "Enter Email Verification Code" %}
-    {% endelement %}
-    {% setvar email_link %}
-        <a href="mailto:{{ email }}">{{ email }}</a>
-    {% endsetvar %}
-    {% element p %}
-        {% blocktranslate %}We’ve sent a code to {{ email_link }}. The code expires shortly, so please enter it soon.{% endblocktranslate %}
-    {% endelement %}
-    {% url 'account_email_verification_sent' as action_url %}
-    {% element form form=form method="post" action=action_url tags="entrance,email,verification" %}
-        {% slot body %}
-            {% csrf_token %}
-            {% element fields form=form unlabeled=True %}
-            {% endelement %}
-            {{ redirect_field }}
-        {% endslot %}
-        {% slot actions %}
-            {% element button type="submit" tags="prominent,confirm" %}
-                {% translate "Confirm" %}
-            {% endelement %}
+<div class="email-verification-container">
+    <h1>{% translate "Digite o Código de Verificação" %}</h1>
+
+    <p>
+        {% blocktranslate %}Enviamos um código para <a href="mailto:{{ email }}">{{ email }}</a>. 
+        O código expira em breve, então insira-o o mais rápido possível.{% endblocktranslate %}
+    </p>
+
+    <form method="post" action="{% url 'account_email_verification_sent' %}" class="verification-form">
+        {% csrf_token %}
+        <div class="input-group">
+            {{ form.code.label_tag }}
+            {{ form.code }}
+        </div>
+
+        {{ redirect_field }}
+
+        <div class="actions">
+            <button type="submit" class="btn-confirm">{% translate "Confirmar" %}</button>
+            
             {% if cancel_url %}
-                {% element button href=cancel_url tags="link,cancel" %}
-                    {% translate "Cancel" %}
-                {% endelement %}
+                <a href="{{ cancel_url }}" class="btn-cancel">{% translate "Cancelar" %}</a>
             {% else %}
-                {% element button type="submit" form="logout-from-stage" tags="link,cancel" %}
-                    {% translate "Cancel" %}
-                {% endelement %}
+                <button type="submit" form="logout-from-stage" class="btn-cancel">{% translate "Cancelar" %}</button>
             {% endif %}
-        {% endslot %}
-    {% endelement %}
+        </div>
+    </form>
+
     {% if not cancel_url %}
-        <form id="logout-from-stage"
-              method="post"
-              action="{% url 'account_logout' %}">
+        <form id="logout-from-stage" method="post" action="{% url 'account_logout' %}">
             <input type="hidden" name="next" value="{% url 'account_login' %}">
             {% csrf_token %}
         </form>
     {% endif %}
+</div>
 {% endblock content %}
+{% include 'pollenvision/partials/_footer.html' %}

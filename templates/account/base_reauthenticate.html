@@ -1,29 +1,35 @@
-{% extends "account/base_entrance.html" %}
 {% load allauth %}
 {% load i18n %}
-{% block head_title %}
-    {% trans "Confirm Access" %}
-{% endblock head_title %}
+
+<link rel="stylesheet" href="/static/account/css/base_reauthenticate.css">
+{% include 'home/headerbase.html' %}
+
+
+
 {% block content %}
-    {% element h1 %}
-        {% trans "Confirm Access" %}
-    {% endelement %}
-    {% element p %}
-        {% blocktranslate %}Please reauthenticate to safeguard your account.{% endblocktranslate %}
-    {% endelement %}
-    {% block reauthenticate_content %}{% endblock %}
+<div class="confirm-access-container">
+    <h1>{% trans "Confirmar Acesso" %}</h1>
+    <p>{% trans "Por favor, reautentique para proteger sua conta." %}</p>
+
+    <form method="post" action="{% url 'account_login' %}" class="reauthenticate-form">
+        {% csrf_token %}
+        <div class="input-group">
+            <label for="password">{% trans "Senha" %}</label>
+            <input type="password" id="password" name="password" 
+                   placeholder="{% trans 'Digite sua senha' %}" required>
+        </div>
+        <button type="submit" class="btn-primary">{% trans "Confirmar Acesso" %}</button>
+    </form>
+
     {% if reauthentication_alternatives %}
-        {% element hr %}
-        {% endelement %}
-        {% element h2 %}
-            {% translate "Alternative options" %}
-        {% endelement %}
-        {% element button_group %}
+        <hr>
+        <h2>{% trans "Opções alternativas" %}</h2>
+        <div class="button-group">
             {% for alt in reauthentication_alternatives %}
-                {% element button href=alt.url tags="primary,outline" %}
-                    {{ alt.description }}
-                {% endelement %}
+                <a href="{{ alt.url }}" class="btn-alternative">{{ alt.description }}</a>
             {% endfor %}
-        {% endelement %}
+        </div>
     {% endif %}
+</div>
 {% endblock content %}
+{% include 'pollenvision/partials/_footer.html' %}
