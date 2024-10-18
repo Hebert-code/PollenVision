@@ -9,6 +9,7 @@
             <img src="/static/pollenvision/img/logo_grande.svg" alt="PollenVision">
         </div>
     </section>
+    <hr>
     <section class="metricas">
         <div class="metricas_painel">
             <h1>Painel de Métricas</h1>
@@ -81,13 +82,17 @@
             <h1>Ajustar Parâmetros de Análise</h1>
             <p>Ajuste fino da sensibilidade do algoritmo e outras configurações técnicas</p>
         </div>
-        <form action="">
-            <label for="sensibilidade">sensibilidade do algoritmo</label>
-            <input type="text" placeholder="Selecione o nível de sensibilidade">
-
-            <label for="regiao">Regiões bloqueadas</label>
-            <input type="text" placeholder="Especificar áreas bloqueadas">
-
+        <form class="form-ajuste" action="">
+            <div class="form-ajuste-campos">
+                <div class="form-ajuste-campos-campo">
+                    <label for="sensibilidade">Sensibilidade do algoritmo</label>
+                    <input type="text" placeholder="Selecione o nível de sensibilidade">    
+                </div>
+                <div class="form-ajuste-campos-campo">
+                    <label for="regiao">Regiões bloqueadas</label>
+                    <input type="text" placeholder="Especificar áreas bloqueadas">
+                </div>
+            </div>
             <button type="submit">Salvar alterações</button>
         </form>
     </section>

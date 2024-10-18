@@ -5,18 +5,37 @@
             <h1>Gerar relatório</h1><br>
             <p>Gere relatórios detalhados em formato PDF ou CSV</p>
         </div>
-        <div class="relatorio_titulo_submit">
-            <div>
-                <label for="Id">Id da Planta</label>
-                <input type="text" placeholder="Opcional">
-
-                <label for="Id">Data Inicial</label>
-                <input type="date">
-
-                <label for="Id">Data final</label>
-                <input type="date">
-            </div>
-        </div>
+        
+        <section class="form-section">
+            <form class="form-relatorio">
+                <div class="form-container">
+                    <div class="form-group">
+                        <label for="id-planta">Id da Planta</label>
+                        <input type="text" id="id-planta" placeholder="Opcional">
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="data-inicial">Data Inicial</label>
+                        <input type="date" id="data-inicial" value="2023-03-23">
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="data-final">Data Final</label>
+                        <input type="date" id="data-final" value="2023-03-23">
+                    </div>
+                </div>
+    
+                <div class="date-interval">
+                    <button type="button">Hoje</button>
+                    <button type="button">Essa semana</button>
+                    <button type="button">Este mês</button>
+                </div>
+    
+                <div class="form-footer">
+                    <button type="submit" class="generate-btn">Gerar</button>
+                </div>
+            </form>
+        </section>
 
         <div class="visualizacao">
             <div class="visualizacao_relatorio">
