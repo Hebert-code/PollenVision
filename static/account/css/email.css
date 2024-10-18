@@ -1,0 +1,107 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+   
+}
+
+.manage-email-container {
+   
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    color: #333;
+    text-align: center;
+}
+
+.email-item {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.email-item input[type="radio"] {
+    margin-right: 10px;
+}
+
+.email-item label {
+    font-size: 16px;
+}
+
+.badge {
+    margin-left: 10px;
+    padding: 2px 6px;
+    border-radius: 5px;
+    font-size: 12px;
+    color: white;
+}
+
+.badge.verified {
+    background-color: #4CAF50;
+}
+
+.badge.unverified {
+    background-color: #FFC107;
+}
+
+.badge.primary {
+    background-color: #2196F3;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #1a73e8;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #1558b0;
+}
+
+.btn-secondary {
+    background-color: #f5f5f5;
+    color: #333;
+    border: 1px solid #ccc;
+}
+
+.btn-secondary:hover {
+    background-color: #e0e0e0;
+}
+
+.btn-danger {
+    background-color: #f44336;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #d32f2f;
+}
+
+.btn-add {
+    width: 100%;
+    margin-top: 10px;
+    background-color: #4CAF50;
+    color: white;
+}

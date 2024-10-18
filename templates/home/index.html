@@ -7,23 +7,9 @@
     <link rel="stylesheet" href="/static/home/css/style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <a href="#">
-                    <img src="/static/home/img/logo.png" alt="PollenVision">
-                    <span>PollenVision</span>
-                </a>
-            </div>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Produtos</a></li>
-                <li><a href="#">Equipe</a></li>
-                <li><a href="#">Contato</a></li>
-                <li><a href="/pollenvision/dashboard">Conecte-se</a></li>
-            </ul>
-        </nav>
-    </header>
+
+    {% include 'home/headerbase.html' %}
+
 
     <main>
         <section class="hero">

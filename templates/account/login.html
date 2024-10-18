@@ -1,0 +1,46 @@
+{% load i18n %}
+{% load allauth account %}
+
+
+{% block content %}
+
+<link rel="stylesheet" href="/static/account/css/login.css">
+{% include 'home/headerbase.html' %}
+<div class="login-container">
+    <div class="logo-container">
+        <img src="/static/home/img/hero_logo.png" alt="PollenVision Logo">
+    </div>
+
+    <form method="post" action="{% url 'account_login' %}" class="login-form">
+        {% csrf_token %}
+        <div class="input-group">
+            <label for="username">{% trans "Nome de usuário" %}</label>
+            <input type="text" id="username" name="login" placeholder="{% trans 'Entre com seu nome de usuário' %}" required>
+        </div>
+
+        <div class="input-group">
+            <label for="password">{% trans "Senha" %}</label>
+            <input type="password" id="password" name="password" placeholder="{% trans 'Coloque sua senha' %}" required>
+        </div>
+
+        <button type="submit" class="btn-login">{% trans "Conecte-se" %}</button>
+        
+        <div class="redirect-signup">
+            <p>{% trans "Não possui conta?" %} 
+                <a href="{% url 'account_signup' %}">{% trans "Cadastre-se" %}</a>
+            </p>
+        </div>
+        <div class="social-login-">
+        {% if SOCIALACCOUNT_ENABLED %}
+            {% include "socialaccount/snippets/login.html" %}
+        {% endif %}
+        </div>
+    </form>
+
+</div>
+
+{% endblock content %}
+{% include 'pollenvision/partials/_footer.html' %}
+{% block extra_body %}
+<script src="/static/account/js/login.js"></script>
+{% endblock extra_body %}
