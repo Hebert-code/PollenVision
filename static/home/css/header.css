@@ -77,7 +77,8 @@ nav ul li a {
     #nav-links.active {
         display: flex;
     }
-=======
+}
+
 .logo {
     display: flex;
     align-items: center;

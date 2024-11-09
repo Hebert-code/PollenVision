@@ -1,23 +1,31 @@
 {% extends 'pollenvision/base.html' %}
 {% block content %}
-    <section class="upload_container">
-        <div class="upload_container_titulo">
-            <h1>Enviar imagem</h1>
-            <p>Arraste e solte as imagens ou clique no botão abaixo</p>
-        </div>
-        <div class="upload_container_up">
+<section class="upload_container">
+    <div class="upload_container_titulo">
+        <h1>Enviar imagem</h1>
+        <p>Arraste e solte as imagens ou clique no botão abaixo</p>
+    </div>
+    <div class="upload_container_up">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
             <div class="upload_container_arrasta">
                 <img src="/static/pollenvision/img/upload.svg" alt="">
                 <p>Arraste e solte sua imagem aqui</p>
             </div>
-            <div class="upload_container_up_button">
-                <a href="#">Upload Images</a>
-                <a href="#">Analisar</a>
+            <div>
+                <label for="plant_id">ID da Planta:</label>
+                <input type="text" name="plant_id" id="plant_id" placeholder="Digite o ID da planta">
             </div>
-        </div>
-        <div class="upload_container_button2">
-            <a href="#">Ver imagem</a>
-            <a href="#">Excluir imagem</a>
-        </div>
-    </section>
+            <div>
+                <label for="image_path">Selecione uma imagem:</label>
+                <input type="file" name="image_path" accept="image/*" required>
+            </div>
+            <div class="upload_container_up_button">
+                <button type="submit">Upload Image</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+
 {% endblock %}

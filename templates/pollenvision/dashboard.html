@@ -16,17 +16,17 @@
             <div class="metricas_painel_cards">
                 <div class="metricas_painel_cards_card">
                     <p>Viabilidade</p>
-                    <h1>92%</h1>
+                    <h1>{{ media_viabilidade|floatformat:2 }}%</h1>
                     <p>+3%</p>
                 </div>            
                 <div class="metricas_painel_cards_card">
                     <p>Histórico de Análise</p>
-                    <h1>45</h1>
+                    <h1>{{ historico_analise }}</h1> 
                     <p>-2</p>
                 </div>
                 <div class="metricas_painel_cards_card">
                     <p>Taxa de erro</p>
-                    <h1>1.5%</h1>
+                    <h1>{{ media_erro|floatformat:2 }}%</h1>
                     <p>-0.3%</p>
                 </div>
             </div>
@@ -46,30 +46,16 @@
         </div>
         <div class="carrossel">
             <div class="carrossel_interno">
+            {% for resultado in resultados %}
                 <div class="carrossel_interno_item">
                     <img src="/static/pollenvision/img/planta.svg" alt="">
                     <div>
-                        <p>09/15/2024</p>
-                        <p>Viabilidade: 94%</p>
-                        <h4>Planta: 12345</h4>
+                        <p>{{ resultado.analysis_date|date:"m/d/Y" }}</p>
+                        <p>Viabilidade: {{ resultado.viability }}%</p>
+                        <h4>Planta: {{ resultado.plant.id }}</h4>
                     </div>
                 </div>
-                <div class="carrossel_interno_item">
-                    <img src="/static/pollenvision/img/planta.svg" alt="">
-                    <div>
-                        <p>09/15/2024</p>
-                        <p>Viabilidade: 84%</p>
-                        <h4>Planta: 12767</h4>
-                    </div>
-                </div>
-                <div class="carrossel_interno_item">
-                    <img src="/static/pollenvision/img/planta.svg" alt="">
-                    <div>
-                        <p>09/15/2024</p>
-                        <p>Viabilidade: 32%</p>
-                        <h4>Planta: 15432</h4>
-                    </div>
-                </div>
+            {% endfor %}
             </div>
             <button class="carousel-control prev" id="prev">&#10094;</button>
             <button class="carousel-control next" id="next">&#10095;</button>
