@@ -1,43 +1,42 @@
-.suporte_header{
+.suporte_header {
     background-color: #20A345;
     height: 392px;
     display: flex;
     flex-direction: column;
     align-items: center;
     color: #fff;
-
 }
 
-.suporte_header_conteudo{
+.suporte_header_conteudo {
     margin-top: 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.suporte_header_conteudo h1{
+.suporte_header_conteudo h1 {
     font-size: 40px;
     font-weight: bold;
     margin-bottom: 24px;
 }
 
-.suporte_header_conteudo p{
+.suporte_header_conteudo p {
     font-size: 16px;
     margin-bottom: 24px;
 }
 
-.suporte_header_conteudo input{
+.suporte_header_conteudo input {
     height: 36px;
     width: 360px;
     border-radius: 6px;
-    padding: 8px 12px 8px 12px;
+    padding: 8px 12px;
     margin-bottom: 24px;
 }
 
-.suporte_header_conteudo button{
+.suporte_header_conteudo button {
     width: 240px;
     height: 48px;
-    padding: 12px 32.5px 12px 32.5px;
+    padding: 12px 32.5px;
     background-color: #171F22;
     color: #fff;
     border: none;
@@ -46,8 +45,6 @@
     font-size: 16px;
 }
 
-
-/* Estilos para a seção de Tópicos */
 .topics {
     text-align: center;
     padding: 20px;
@@ -64,9 +61,8 @@
     width: 500px;
 }
 
-.topic-container-cards{
+.topic-container-cards {
     display: flex;
-
 }
 
 .topic-card {
@@ -89,9 +85,6 @@
     color: #888;
 }
 
-
-
-/* Estilos para a seção de Tutoriais */
 .tutorials {
     text-align: center;
     padding: 20px;
@@ -100,7 +93,7 @@
 
 h2 {
     font-size: 2rem;
-    margin: 39px 0 60px 0px;
+    margin: 39px 0 60px 0;
 }
 
 .tutorial-container {
@@ -139,4 +132,46 @@ h2 {
 
 .tutorial-card p {
     color: #888;
+}
+
+@media (max-width: 768px) {
+    .suporte_header {
+        height: auto;
+        padding: 20px;
+    }
+
+    .suporte_header_conteudo h1 {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .suporte_header_conteudo p {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .suporte_header_conteudo input {
+        width: 90%;
+        max-width: 360px;
+    }
+
+    .suporte_header_conteudo button {
+        width: 90%;
+        max-width: 240px;
+    }
+
+    .topic-container {
+        width: 90%;
+    }
+
+    .tutorial-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tutorial-card {
+        width: 90%;
+        max-width: 250px;
+        margin: 10px 0;
+    }
 }

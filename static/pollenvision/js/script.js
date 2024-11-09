@@ -10,4 +10,5 @@ function toggleMenu() {
     } else {
         toggleButton.innerHTML = "&#10006;"; // para fechar
     }
+
 }

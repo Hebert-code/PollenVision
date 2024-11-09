@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # apps criados abaixo:
+    'pollenvision',
+    'home',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',

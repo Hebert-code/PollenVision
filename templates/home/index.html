@@ -5,8 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PollenVision</title>
     <link rel="stylesheet" href="/static/home/css/style.css">
+    <link rel="stylesheet" href="/static/home/css/header.css">
 </head>
 <body>
+<header>
+    <nav>
+        <div class="logo">
+            <a href="#">
+                <img src="/static/home/img/logo.png" alt="PollenVision">
+                <span>PollenVision</span>
+            </a>
+        </div>
+        <div class="menu-hamburguer" id="menu-toggle">
+            &#9776;
+        </div>
+        <ul id="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Produtos</a></li>
+            <li><a href="#">Equipe</a></li>
+            <li><a href="#">Contato</a></li>
+            <li><a href="/pollenvision/dashboard">Conecte-se</a></li>
+        </ul>
+    </nav>
+</header>
 
     {% include 'home/headerbase.html' %}
 
@@ -96,6 +117,12 @@
        
     </footer>
 
-    <script src="scripts.js"></script>
+    <script>
+            document.getElementById('menu-toggle').addEventListener('click', function() {
+        var navLinks = document.getElementById('nav-links');
+        navLinks.classList.toggle('active');
+    });
+    </script>
+
 </body>
 </html>
