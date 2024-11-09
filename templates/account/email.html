@@ -1,0 +1,79 @@
+
+{% load allauth i18n %}
+<link rel="stylesheet" href="/static/account/css/email.css">
+{% include 'home/headerbase.html' %}
+
+
+{% block content %}
+<div class="manage-email-container">
+    <h1>{% trans "Email Addresses" %}</h1>
+
+    {% if emailaddresses %}
+        <p>{% trans 'The following email addresses are associated with your account:' %}</p>
+
+        <form method="post" action="{% url 'account_email' %}" class="email-form">
+            {% csrf_token %}
+            {% for radio in emailaddress_radios %}
+                {% with emailaddress=radio.emailaddress %}
+                    <div class="email-item">
+                        <input type="radio" name="email" value="{{ emailaddress.email }}" id="{{ radio.id }}"
+                               {% if radio.checked %}checked{% endif %} />
+                        <label for="{{ radio.id }}">
+                            {{ emailaddress.email }}
+                            {% if emailaddress.verified %}
+                                <span class="badge verified">{% trans "Verified" %}</span>
+                            {% else %}
+                                <span class="badge unverified">{% trans "Unverified" %}</span>
+                            {% endif %}
+                            {% if emailaddress.primary %}
+                                <span class="badge primary">{% trans "Primary" %}</span>
+                            {% endif %}
+                        </label>
+                    </div>
+                {% endwith %}
+            {% endfor %}
+
+            <div class="actions">
+                <button type="submit" name="action_primary" class="btn-primary">
+                    {% trans 'Make Primary' %}
+                </button>
+                <button type="submit" name="action_send" class="btn-secondary">
+                    {% trans 'Re-send Verification' %}
+                </button>
+                <button type="submit" name="action_remove" class="btn-danger">
+                    {% trans 'Remove' %}
+                </button>
+            </div>
+        </form>
+    {% else %}
+        {% include "account/snippets/warn_no_email.html" %}
+    {% endif %}
+
+    {% if can_add_email %}
+        <h2>{% trans "Add Email Address" %}</h2>
+
+        <form method="post" action="{% url 'account_email' %}" class="add-email-form">
+            {% csrf_token %}
+            {{ form.email.label_tag }}
+            {{ form.email }}
+            <button type="submit" name="action_add" class="btn-add">{% trans "Add Email" %}</button>
+        </form>
+    {% endif %}
+</div>
+{% endblock content %}
+
+{% block extra_body %}
+<script>
+(function() {
+  var message = "{% trans 'Do you really want to remove the selected email address?' %}";
+  var actions = document.getElementsByName('action_remove');
+  if (actions.length) {
+    actions[0].addEventListener("click", function(e) {
+      if (!confirm(message)) {
+        e.preventDefault();
+      }
+    });
+  }
+})();
+</script>
+{% endblock extra_body %}

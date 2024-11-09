@@ -1,0 +1,61 @@
+{% load i18n %}
+{% load allauth account %}
+
+{% block content %}
+<link rel="stylesheet" href="/static/account/css/signup.css">
+{% include 'home/headerbase.html' %}
+
+<div class="login-container">
+    <div class="logo-container">
+        <img src="/static/home/img/hero_logo.png" alt="PollenVision Logo">
+    </div>
+
+    <form method="post" action="{% url 'account_signup' %}" class="login-form">
+        {% csrf_token %}
+        
+        <div class="input-group">
+            <label for="username">{% trans "Nome de usuário" %}</label>
+            <input type="text" id="username" name="username" 
+                   placeholder="{% trans 'Escolha um nome de usuário' %}" required>
+        </div>
+
+        <div class="input-group">
+            <label for="email">{% trans "Email" %}</label>
+            <input type="email" id="email" name="email" 
+                   placeholder="{% trans 'Digite seu email' %}" required>
+        </div>
+
+        <div class="input-group">
+            <label for="password1">{% trans "Senha" %}</label>
+            <input type="password" id="password1" name="password1" 
+                   placeholder="{% trans 'Crie uma senha' %}" required>
+        </div>
+
+        <div class="input-group">
+            <label for="password2">{% trans "Confirme sua Senha" %}</label>
+            <input type="password" id="password2" name="password2" 
+                   placeholder="{% trans 'Repita a senha' %}" required>
+        </div>
+
+        <button type="submit" class="btn-login">{% trans "Cadastre-se" %}</button>
+
+        <div class="redirect-login">
+            <p>{% trans "Já tem uma conta?" %} 
+                <a href="{% url 'account_login' %}">{% trans "Faça login aqui" %}</a>
+            </p>
+        </div>
+
+        <div class="social-login">
+            {% if SOCIALACCOUNT_ENABLED %}
+                {% include "socialaccount/snippets/login.html" %}
+            {% endif %}
+        </div>
+    </form>
+</div>
+
+{% endblock content %}
+{% include 'pollenvision/partials/_footer.html' %}
+
+{% block extra_body %}
+<script src="/static/account/js/login.js"></script>
+{% endblock extra_body %}

@@ -39,9 +39,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     # apps criados abaixo:
     'pollenvision',
     'home',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
 ]
 
 MIDDLEWARE = [
@@ -52,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'setup.urls'
@@ -72,6 +78,28 @@ TEMPLATES = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = [
+   
+    'django.contrib.auth.backends.ModelBackend',
+
+    'allauth.account.auth_backends.AuthenticationBackend',
+  
+]
+
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+
+# Provider specific settings
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'APP': {
+            'client_id': os.getenv('ID_CLIENT'),
+            'secret': os.getenv('GOOGLE_KEY_LOGIN'),  
+        }
+    }
+}
+
+SOCIALACCOUNT_LOGIN_ON_GET= True
 WSGI_APPLICATION = 'setup.wsgi.application'
 
 
