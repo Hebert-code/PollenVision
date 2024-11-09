@@ -1,0 +1,105 @@
+{% extends 'pollenvision/base.html' %}
+{% block content %}
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Bem-vindo à Pollen Vision</h1>
+            <p>Transformando a análise de viabilidade do pólen com tecnologia de ponta</p>
+        </div>
+        <div class="hero-image">
+            <img src="/static/pollenvision/img/logo_grande.svg" alt="PollenVision">
+        </div>
+    </section>
+    <hr>
+    <section class="metricas">
+        <div class="metricas_painel">
+            <h1>Painel de Métricas</h1>
+            <div class="metricas_painel_cards">
+                <div class="metricas_painel_cards_card">
+                    <p>Viabilidade</p>
+                    <h1>{{ media_viabilidade|floatformat:2 }}%</h1>
+                    <p>+3%</p>
+                </div>            
+                <div class="metricas_painel_cards_card">
+                    <p>Histórico de Análise</p>
+                    <h1>{{ historico_analise }}</h1> 
+                    <p>-2</p>
+                </div>
+                <div class="metricas_painel_cards_card">
+                    <p>Taxa de erro</p>
+                    <h1>{{ media_erro|floatformat:2 }}%</h1>
+                    <p>-0.3%</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="metricas_painel">
+    
+        </div>
+    </section>
+    <hr>
+    <section class="analises">
+        <div class="analises_titulo">
+            <h1>Plantas</h1>
+            <div>
+                <input type="text" placeholder="Digite o id da planta">
+            </div>
+        </div>
+        <div class="carrossel">
+            <div class="carrossel_interno">
+            {% for resultado in resultados %}
+                <div class="carrossel_interno_item">
+                    <img src="/static/pollenvision/img/planta.svg" alt="">
+                    <div>
+                        <p>{{ resultado.analysis_date|date:"m/d/Y" }}</p>
+                        <p>Viabilidade: {{ resultado.viability }}%</p>
+                        <h4>Planta: {{ resultado.plant.id }}</h4>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+            <button class="carousel-control prev" id="prev">&#10094;</button>
+            <button class="carousel-control next" id="next">&#10095;</button>
+        </div>
+    </section>
+    <hr>
+
+    <section class="ajustes">
+        <div class="ajustes_titulo">
+            <h1>Ajustar Parâmetros de Análise</h1>
+            <p>Ajuste fino da sensibilidade do algoritmo e outras configurações técnicas</p>
+        </div>
+        <form class="form-ajuste" action="">
+            <div class="form-ajuste-campos">
+                <div class="form-ajuste-campos-campo">
+                    <label for="sensibilidade">Sensibilidade do algoritmo</label>
+                    <input type="text" placeholder="Selecione o nível de sensibilidade">    
+                </div>
+                <div class="form-ajuste-campos-campo">
+                    <label for="regiao">Regiões bloqueadas</label>
+                    <input type="text" placeholder="Especificar áreas bloqueadas">
+                </div>
+            </div>
+            <button type="submit">Salvar alterações</button>
+        </form>
+    </section>
+
+    <section class="final">
+        <img src="/static/pollenvision/img/logo.png" alt="">
+        <div class="final_conteudo">
+            <h1>Pollen Vision</h1>
+            <div class="final_conteudo_itens">
+                <div class="final_conteudo_itens_item">
+                    <p>Inovação</p>
+                </div>
+                <div class="final_conteudo_itens_item">
+                    <p>Precisão</p>
+                </div>
+                <div class="final_conteudo_itens_item">
+                    <p>Eficiência</p>
+                </div>
+            </div>
+            <p>Impulsionando a mudança na análise do pólen</p>
+        </div>
+    </section>
+    <hr>
+{% endblock %}

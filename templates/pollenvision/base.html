@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PollenVision</title>
+    <link rel="stylesheet" href="/static/pollenvision/css/base.css">
+    <script src="/static/pollenvision/js/script.js"></script>
+    <link rel="stylesheet" href="/static/pollenvision/css/header.css">
+    <link rel="stylesheet" href="/static/pollenvision/css/dashboard.css">
+    <link rel="stylesheet" href="/static/pollenvision/css/historico.css">
+    <link rel="stylesheet" href="/static/pollenvision/css/relatorios.css">
+    <link rel="stylesheet" href="/static/pollenvision/css/resultado.css">
+    <link rel="stylesheet" href="/static/pollenvision/css/suporte.css">
+    <link rel="stylesheet" href="/static/pollenvision/css/upload.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    {% include 'pollenvision/partials/_heads.html' %}
+    {% block content %}{% endblock %}
+    {% include 'pollenvision/partials/_footer.html' %}
+</body>
+</html>

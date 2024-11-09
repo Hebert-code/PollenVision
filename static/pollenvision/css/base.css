@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --cor_principal: #1A1F23
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #1A1F23;
+    padding: 10px 20px;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+   
+    width: 50px;
+    margin-right: 10px;
+}
+
+.logo a {
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+nav span {
+   
+    font-family: "ABeeZee", sans-serif;
+     font-weight: 400;
+    font-style: normal;
+    color: #fff;
+    font-size: 20px;
+}
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+
+
+}
+
+#menu-container {
+    position: relative;
+}
+
+.menu-lateral_navegacao {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #1A1F23;
+    width: 250px;
+    padding: 10px;
+    left: 0;
+    transition: left 0.3s ease;
+}
+
+#toggleMenu {
+    position: absolute;
+    top: 25px;
+    left: 250px; 
+    transform: translateY(-50%);
+    background-color: #1A1F23;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    transition: left 0.3s ease;
+    border-radius: 10px;
+}
+
+
+.menu-hidden {
+    left: -250px;
+}
+
+.menu-hidden + #toggleMenu {
+    left: 0; 
+}
+
+.menu-lateral_navegacao a {
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 16px 0;
+}
+
+.menu-lateral_navegacao a:hover {
+    background-color: #2A2F35;
+}
+
+.menu-lateral_navegacao i {
+    font-size: 24px;
+    margin: 0px 15px 0px 10px;
+}
+
+footer {
+    background-color: #1A1F23 ;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: none;
+    gap: 20px;
+   
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}

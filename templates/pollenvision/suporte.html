@@ -1,0 +1,59 @@
+{% extends 'pollenvision/base.html' %}
+{% block content %}
+    <section class="suporte_header">
+        <div class="suporte_header_conteudo">
+            <h1>Bem-vindo ao Centro de Suporte</h1>
+            <p>Encontre respostas para todas as suas perguntas aqui.</p>
+            <input type="text" placeholder="Procurar ajuda">
+            <button type="submit">Converse com o suporte</button>
+        </div>
+    </section>
+    <!-- Seção de Tópicos -->
+    <section class="topics">
+        <h2>Tópicos</h2>
+        <div class="topic-container">
+            <div class="topic-container-cards">
+                <div class="topic-card">
+                    <span class="emoji">😊</span>
+                    <h3>Consultas sobre faturamento</h3>
+                    <p>Pagamentos e reembolsos</p>
+                </div>
+    
+                <div class="topic-card">
+                    <span class="emoji">📖</span>
+                    <h3>Guia do usuário</h3>
+                    <p>Manuais úteis</p>
+                    </div>
+            </div>
+            <div class="topic-card">
+                <span class="emoji">🔧</span>
+                <h3>Suporte técnico</h3>
+                <p>Assistência técnica</p>
+            </div>
+        </div>
+    </section>
+    <hr>
+        <!-- Seção de Tutoriais -->
+        <section class="tutorials">
+            <h2>Tutoriais</h2>
+            <div class="tutorial-container">
+                <a href="https://www.youtube.com/watch?v=EXEMPLO1" class="tutorial-card">
+                    <img src="/static/pollenvision/img/youtube.png" alt="Ícone do YouTube">
+                    <h3>Como personalizar as configurações</h3>
+                    <p>Personalize sua experiência</p>
+                </a>
+    
+                <a href="https://www.youtube.com/watch?v=EXEMPLO2" class="tutorial-card">
+                    <img src="/static/pollenvision/img/youtube.png" alt="Ícone do YouTube">
+                    <h3>Como usar a plataforma</h3>
+                    <p>Aprenda a utilizar a plataforma</p>
+                </a>
+    
+                <a href="https://www.youtube.com/watch?v=EXEMPLO3" class="tutorial-card">
+                    <img src="/static/pollenvision/img/youtube.png" alt="Ícone do YouTube">
+                    <h3>Dicas e truques avançados</h3>
+                    <p>Aumentar a produtividade</p>
+                </a>
+            </div>
+        </section>
+{% endblock %}

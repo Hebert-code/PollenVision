@@ -1,0 +1,111 @@
+.upload_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.upload_container_titulo {
+    height: 96px;
+    margin: 60px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.upload_container_up {
+    display: flex;
+    height: 530px;
+    align-items: center;
+}
+
+.upload_container_arrasta {
+    width: 589px;
+    height: 410px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto;
+    font-size: 24px;
+    color: #000000;
+    background-color: #20A345;
+    border-radius: 33px;
+}
+
+.upload_container_up_button {
+    display: flex;
+    flex-direction: column;
+    margin-left: 164px;
+}
+
+.upload_container_up_button a {
+    background-color: var(--cor_principal);
+    border-radius: 8px;
+    padding: 12px 66px;
+    width: 240px;
+    height: 48px;
+    margin-bottom: 41px;
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.upload_container_button2 {
+    display: flex;
+}
+
+.upload_container_button2 a {
+    background-color: var(--cor_principal);
+    border-radius: 8px;
+    padding: 12px 66px;
+    width: 254px;
+    height: 52px;
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 40px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .upload_container_up {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .upload_container_arrasta {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        margin: 20px;
+        font-size: 18px;
+        padding: 20px;
+    }
+
+    .upload_container_up_button {
+        margin-left: 0;
+        align-items: center;
+    }
+
+    .upload_container_up_button a {
+        width: 100%;
+        max-width: 240px;
+        padding: 12px;
+    }
+
+    .upload_container_button2 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .upload_container_button2 a {
+        width: 100%;
+        max-width: 254px;
+        margin: 20px;
+        padding: 12px;
+    }
+}

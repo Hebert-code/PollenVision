@@ -1,0 +1,177 @@
+.suporte_header {
+    background-color: #20A345;
+    height: 392px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+}
+
+.suporte_header_conteudo {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.suporte_header_conteudo h1 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 24px;
+}
+
+.suporte_header_conteudo p {
+    font-size: 16px;
+    margin-bottom: 24px;
+}
+
+.suporte_header_conteudo input {
+    height: 36px;
+    width: 360px;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-bottom: 24px;
+}
+
+.suporte_header_conteudo button {
+    width: 240px;
+    height: 48px;
+    padding: 12px 32.5px;
+    background-color: #171F22;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.topics {
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.topic-container {
+    display: grid;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    width: 500px;
+}
+
+.topic-container-cards {
+    display: flex;
+}
+
+.topic-card {
+    text-align: center;
+    margin: 10px;
+}
+
+.emoji {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.topic-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.topic-card p {
+    color: #888;
+}
+
+.tutorials {
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 60px;
+}
+
+h2 {
+    font-size: 2rem;
+    margin: 39px 0 60px 0;
+}
+
+.tutorial-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.tutorial-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tutorial-card:hover {
+    transform: scale(1.05);
+}
+
+.tutorial-card img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.tutorial-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.tutorial-card p {
+    color: #888;
+}
+
+@media (max-width: 768px) {
+    .suporte_header {
+        height: auto;
+        padding: 20px;
+    }
+
+    .suporte_header_conteudo h1 {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .suporte_header_conteudo p {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .suporte_header_conteudo input {
+        width: 90%;
+        max-width: 360px;
+    }
+
+    .suporte_header_conteudo button {
+        width: 90%;
+        max-width: 240px;
+    }
+
+    .topic-container {
+        width: 90%;
+    }
+
+    .tutorial-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tutorial-card {
+        width: 90%;
+        max-width: 250px;
+        margin: 10px 0;
+    }
+}

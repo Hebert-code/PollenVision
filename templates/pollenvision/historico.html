@@ -1,0 +1,57 @@
+{% extends 'pollenvision/base.html' %}
+{% block content %}
+    <section class="historico">
+        <h1>Lista cronologica de análises</h1>
+    <div class="historico_containers">
+        <div class="historico_container">
+            <img src="/static/pollenvision/img/planta.svg" alt="">
+            <div class="historico_container_analise">
+                <h5>Análise 1 ID:1111</h5>
+                <p>Data: 01/15/2022</p>
+            </div>
+            <h3>Viability: 87%</h3>
+        </div>
+        <div class="historico_container">
+            <img src="/static/pollenvision/img/planta.svg" alt="">
+            <div class="historico_container_analise">
+                <h5>Análise 1 ID:1111</h5>
+                <p>Data: 01/15/2022</p>
+            </div>
+            <h3>Viability: 87%</h3>
+        </div>
+        <div class="historico_container">
+            <img src="/static/pollenvision/img/planta.svg" alt="">
+            <div class="historico_container_analise">
+                <h5>Análise 1 ID:1111</h5>
+                <p>Data: 01/15/2022</p>
+            </div>
+            <h3>Viability: 87%</h3>
+        </div>
+    </div>
+    </section>
+    <hr>
+    <section class="historico">
+        <div>
+            <h1>Filtro de pesquisa</h1>
+            <p>Refinar análises por data, viabilidade e outros critérios</p>
+        </div>
+        <form class="form-historico" action="">
+            <div class="form-historico-campos">
+                <div class="form-historico-campos-campo">
+                    <label for="id">Identificação da Planta:</label>
+                    <input type="number" id="id" placeholder="0000000" name="id" required>        
+                </div>
+                <div class="form-historico-campos-campo">
+                    <label for="datainicial">Data inicial:</label>
+                    <input type="date" id="datainicial" placeholder="23/05/2024" name="datainicial" required>        
+                </div>
+                <div class="form-historico-campos-campo">
+                    <label for="datafinal">Data Final:</label>
+                    <input type="date" id="datafinal" placeholder="23/05/2024" name="datafinal" required>
+                </div>
+            </div>
+            <button type="submit">Procurar</button>
+        </form>
+        
+    </section>
+{% endblock %}

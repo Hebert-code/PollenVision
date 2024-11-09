@@ -1,0 +1,19 @@
+
+{% load i18n %}
+{% load allauth %}
+
+<link rel="stylesheet" href="/static/account/css/account_inactive.css">
+{% include 'home/headerbase.html' %}
+
+
+
+{% block content %}
+<div class="inactive-container">
+    <h1>{% trans "Conta Inativa" %}</h1>
+    <p>{% trans "Esta conta está inativa." %}</p>
+    <a href="{% url 'account_login' %}" class="btn-back-login">
+        {% trans "Voltar para Login" %}
+    </a>
+</div>
+{% endblock content %}
+{% include 'pollenvision/partials/_footer.html' %}
