@@ -1,9 +1,11 @@
+{% extends 'pollenvision/base.html' %}
 {% load allauth i18n %}
 
 
-<link rel="stylesheet" href="/static/account/css/logout.css">
-{% include 'home/headerbase.html' %}
+
 {% block content %}
+<link rel="stylesheet" href="/static/account/css/logout.css">
+
 <div class="logout-container">
     <h1>{% trans "Sair" %}</h1>
     <p>{% trans "Tem certeza de que deseja sair?" %}</p>

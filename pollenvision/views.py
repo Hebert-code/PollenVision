@@ -1,14 +1,16 @@
 from django.shortcuts import render, redirect
 from .forms import ImageUploadForm
 from .models import AnalysisResult, Profile, Image, Plant
-
+from django.contrib.auth.decorators import login_required
 # Create your views here.
-
+@login_required
 def index(request):
-    return render(request, 'pollenvision/base.html')
-
-def dashboard(request):
     
+    return render(request, 'pollenvision/base.html')
+@login_required
+def dashboard(request):
+   
+
     resultados = AnalysisResult.objects.all()
 
     total_viabilidade = sum([resultado.viability for resultado in resultados])
@@ -25,7 +27,7 @@ def dashboard(request):
         'media_erro': media_erro,
         'resultados': resultados
     })
-
+@login_required
 def upload(request):
     if request.method == 'POST' and 'image_path' in request.FILES and 'plant_id' in request.POST:
 
@@ -48,15 +50,15 @@ def upload(request):
         return redirect('pollenvision/resultado.html')  # Ou a URL de sua escolha
 
     return render(request, 'pollenvision/upload.html')
-
+@login_required
 def resultado(request):
     return render(request, 'pollenvision/resultado.html')
-
+@login_required
 def historico(request):
     return render(request, 'pollenvision/historico.html')
-
+@login_required
 def relatorios(request):
     return render(request, 'pollenvision/relatorios.html')
-
+@login_required
 def suporte(request):
     return render(request, 'pollenvision/suporte.html')
