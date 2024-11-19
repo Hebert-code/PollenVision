@@ -33,7 +33,7 @@
     margin-bottom: 24px;
 }
 
-.suporte_header_conteudo button {
+.button {
     width: 240px;
     height: 48px;
     padding: 12px 32.5px;
@@ -43,6 +43,12 @@
     border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
+    text-decoration: none;
+}
+
+.anco{
+    text-decoration: none;
+    color: #000;
 }
 
 .topics {
@@ -68,12 +74,14 @@
 .topic-card {
     text-align: center;
     margin: 10px;
+    text-decoration: none;
 }
 
 .emoji {
     font-size: 3rem;
     display: block;
     margin-bottom: 10px;
+    text-decoration: none;
 }
 
 .topic-card h3 {

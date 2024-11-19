@@ -2,32 +2,18 @@
 {% block content %}
     <section class="historico">
         <h1>Lista cronologica de análises</h1>
-    <div class="historico_containers">
-        <div class="historico_container">
-            <img src="/static/pollenvision/img/planta.svg" alt="">
-            <div class="historico_container_analise">
-                <h5>Análise 1 ID:1111</h5>
-                <p>Data: 01/15/2022</p>
-            </div>
-            <h3>Viability: 87%</h3>
+        <div class="historico_containers">
+            {% for analysis in analysis_results%}
+                <div class="historico_container">
+                    <img src="/static/pollenvision/img/planta.svg" alt="">
+                    <div class="historico_container_analise">
+                        <h5>Análise {{ forloop.counter }} ID:{{ analysis.plant.plant_name }}</h5>
+                        <p>Data: {{ analysis.analysis_date|date:"d/m/Y" }}</p>
+                    </div>
+                    <h3>Viability: {{ analysis.viability }}%</h3>
+                </div>
+            {% endfor %}
         </div>
-        <div class="historico_container">
-            <img src="/static/pollenvision/img/planta.svg" alt="">
-            <div class="historico_container_analise">
-                <h5>Análise 1 ID:1111</h5>
-                <p>Data: 01/15/2022</p>
-            </div>
-            <h3>Viability: 87%</h3>
-        </div>
-        <div class="historico_container">
-            <img src="/static/pollenvision/img/planta.svg" alt="">
-            <div class="historico_container_analise">
-                <h5>Análise 1 ID:1111</h5>
-                <p>Data: 01/15/2022</p>
-            </div>
-            <h3>Viability: 87%</h3>
-        </div>
-    </div>
     </section>
     <hr>
     <section class="historico">
@@ -35,19 +21,20 @@
             <h1>Filtro de pesquisa</h1>
             <p>Refinar análises por data, viabilidade e outros critérios</p>
         </div>
-        <form class="form-historico" action="">
+        <form class="form-historico" action="" method="POST">
+            {% csrf_token %}
             <div class="form-historico-campos">
                 <div class="form-historico-campos-campo">
-                    <label for="id">Identificação da Planta:</label>
-                    <input type="number" id="id" placeholder="0000000" name="id" required>        
+                    <label for="id_plant">Identificação da Planta:</label>
+                    <input type="number" id="id_plant" placeholder="1234567" name="id_plant" value="{{ request.POST.id_plant }}">        
                 </div>
                 <div class="form-historico-campos-campo">
                     <label for="datainicial">Data inicial:</label>
-                    <input type="date" id="datainicial" placeholder="23/05/2024" name="datainicial" required>        
+                    <input type="date" id="datainicial" placeholder="23/05/2024" name="datainicial"  value="{{ request.POST.datainicial }}">        
                 </div>
                 <div class="form-historico-campos-campo">
                     <label for="datafinal">Data Final:</label>
-                    <input type="date" id="datafinal" placeholder="23/05/2024" name="datafinal" required>
+                    <input type="date" id="datafinal" placeholder="23/05/2024" name="datafinal" value="{{ request.POST.datafinal }}">
                 </div>
             </div>
             <button type="submit">Procurar</button>
