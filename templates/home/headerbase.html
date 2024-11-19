@@ -1,21 +1,24 @@
 {% load static %}
 <head>
+  
     <link rel="stylesheet" href="/static/home/css/header.css">
 </head>
 <header>
     <nav>
         <div class="logo">
             <a href="#">
-                <img src="/static/home/img/logo.png" alt="PollenVision">
+                <img src="{% static 'home/img/logo.png' %}" alt="PollenVision">
                 <span>PollenVision</span>
             </a>
         </div>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Produtos</a></li>
-            <li><a href="#">Equipe</a></li>
-            <li><a href="#">Contato</a></li>
-            <li><a href="#">Conecte-se</a></li>
+        <div class="menu-hamburguer" onclick="toggleMenu()">☰</div>
+        <ul id="nav-links">
+            <button class="close-btn" onclick="toggleMenu()">×</button>
+            <li><a href="{% url 'home-unlogged' %}">Home</a></li>
+            <li><a href="#produtos">Produtos</a></li>
+            <li><a href="#equipe">Equipe</a></li>
+            <li><a href="{% url 'account_login' %}">Conecte-se</a></li>
         </ul>
     </nav>
 </header>
+<script src="/static/home/js/menu.js"></script>

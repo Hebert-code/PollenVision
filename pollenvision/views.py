@@ -71,8 +71,8 @@ def historico(request):
             analysis_results = analysis_results.filter(plant__plant_id = plant_id1)
     
     for result in analysis_results:
-        plant = result.plant  
-        print(plant.plant_name) 
+        plant = result.plant  # Acessa o objeto Plant relacionado
+        print(plant.plant_name)  # Exemplo de como acessar o nome da planta
 
     analysis_results = analysis_results.order_by('-analysis_date')[:3]
     
