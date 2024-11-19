@@ -2,12 +2,17 @@ from django.shortcuts import render
 from .models import AnalysisResult, Profile, Image, Plant
 from django.http import HttpResponse
 from reportlab.pdfgen import canvas
-
+from django.contrib.auth.decorators import login_required
+# Create your views here.
+@login_required
 def index(request):
-    return render(request, 'pollenvision/base.html')
-
-def dashboard(request):
     
+    return render(request, 'pollenvision/base.html')
+  
+@login_required
+def dashboard(request):
+   
+
     resultados = AnalysisResult.objects.all()
 
     total_viabilidade = sum([resultado.viability for resultado in resultados])
@@ -24,7 +29,8 @@ def dashboard(request):
         'media_erro': media_erro,
         'resultados': resultados
     })
-
+  
+@login_required
 def upload(request):
     if request.method == 'POST' and 'image_path' in request.FILES and 'plant_name' in request.POST:
 
@@ -39,14 +45,16 @@ def upload(request):
         return resultado(request)
 
     return render(request, 'pollenvision/upload.html')
-
+  
+@login_required
 def resultado(request):
     #Basicamente vamos pegar a analise mais recente
     #A yolo salva no banco e a gente pega a mais recente 
     analysis_result = AnalysisResult.objects.latest('analysis_date')
 
     return render(request, 'pollenvision/resultado.html', {'analysis_result': analysis_result})
-
+  
+@login_required
 def historico(request):
     if request.method == "GET":
         analysis_results = AnalysisResult.objects.all()
@@ -79,9 +87,11 @@ def historico(request):
     return render(request, 'pollenvision/historico.html', {'analysis_results': analysis_results})
     
 
+@login_required
 def suporte(request):
     return render(request, 'pollenvision/suporte.html')
 
+@login_required
 def relatorios(request):
     if request.method == "POST":
         nome_planta = request.POST.get("id_planta")
