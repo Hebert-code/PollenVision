@@ -42,6 +42,7 @@
 
         </div>
         <div class="carrossel">
+
             <div class="carrossel-lista">
               {% for resultado in resultados %}
                 <div class="carrossel-item"> <!-- CARD-item -->
@@ -51,6 +52,7 @@
                     <p>Viabilidade: {{ resultado.viability }}%</p>
                     <h4>Planta: {{ resultado.plant.plant_name }}</h4>
                   </div>
+
                 </div>
               {% endfor %}
             </div>
