@@ -31,6 +31,10 @@
     padding: 16px;
 }
 
+.graficoresult{
+    margin: 20px;
+}
+
 @media (max-width: 768px) {
     .resultado_container img {
         width: 80px;

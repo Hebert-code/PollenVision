@@ -2,17 +2,21 @@ from django.shortcuts import render
 from .models import AnalysisResult, Profile, Image, Plant
 from django.http import HttpResponse
 from reportlab.pdfgen import canvas
+from .yolo_utils import yolo_infer
+import os
+from django.conf import settings
+
 from django.contrib.auth.decorators import login_required
-# Create your views here.
+
+
 @login_required
 def index(request):
-    
     return render(request, 'pollenvision/base.html')
-  
+ 
 @login_required
 def dashboard(request):
-   
 
+    
     resultados = AnalysisResult.objects.all()
 
     total_viabilidade = sum([resultado.viability for resultado in resultados])
@@ -22,13 +26,20 @@ def dashboard(request):
     media_erro = total_erro / len(resultados) if resultados else 0
 
     historico_analise = len(resultados)
+
+    # Preparar as datas e as viabilidades para o gráfico
+    datas = [resultado.analysis_date.strftime('%Y-%m-%d') for resultado in resultados]
+    viabilidades = [resultado.viability for resultado in resultados]
     
     return render(request, 'pollenvision/dashboard.html', {
         'media_viabilidade': media_viabilidade,
         'historico_analise': historico_analise,
         'media_erro': media_erro,
-        'resultados': resultados
+        'resultados': resultados,
+        'datas': datas,
+        'viabilidades': viabilidades,
     })
+
   
 @login_required
 def upload(request):
@@ -40,12 +51,53 @@ def upload(request):
         user = Profile.objects.first()
         plant = Plant.objects.create(user=user, plant_name=plant_name)
 
-        Image.objects.create(plant=plant, user=user, image_path=image_file)
+        # Salva a imagem no banco e no sistema de arquivos
+        image_instance = Image.objects.create(plant=plant, user=user, image_path=image_file)
 
+        # Caminho absoluto da imagem salva
+        image_path = os.path.join(settings.MEDIA_ROOT, str(image_instance.image_path))
+
+        # Realiza a análise com YOLO
+        yolo_results = yolo_infer(image_path)
+
+        # Variáveis para calcular a viabilidade baseada na média de confiança
+        total_confidence = 0
+        valid_detections = 0
+        good_count = 0
+
+        for result in yolo_results:
+            confidence = result['confidence']
+            total_confidence += confidence
+            valid_detections += 1
+            if result['class'] == 'Good':
+                good_count += 1
+
+        # Calcula a média de confiança se houver detecções válidas
+        if valid_detections > 0:
+            average_confidence = total_confidence / valid_detections
+            # Aqui, você pode definir um critério para a viabilidade baseado na confiança média
+            viability = (average_confidence * 100)  # Exemplo de viabilidade com base na média de confiança
+        else:
+            average_confidence = 0
+            viability = 0  # Nenhuma detecção válida
+
+        # Se preferir usar o número de "Good" para viabilidade, substitua:
+        # viability = (good_count / grain_count) * 100
+
+        error = 100 - viability  # Simples diferença
+
+        # Salva os resultados no banco
+        AnalysisResult.objects.create(
+            image=image_instance,
+            plant=plant,
+            viability=viability,
+            grain_count=valid_detections,
+            error=error
+        )
         return resultado(request)
 
     return render(request, 'pollenvision/upload.html')
-  
+
 @login_required
 def resultado(request):
     #Basicamente vamos pegar a analise mais recente
@@ -53,6 +105,7 @@ def resultado(request):
     analysis_result = AnalysisResult.objects.latest('analysis_date')
 
     return render(request, 'pollenvision/resultado.html', {'analysis_result': analysis_result})
+
   
 @login_required
 def historico(request):
@@ -86,6 +139,7 @@ def historico(request):
     
     return render(request, 'pollenvision/historico.html', {'analysis_results': analysis_results})
     
+
 
 @login_required
 def suporte(request):

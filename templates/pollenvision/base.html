@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PollenVision</title>
     <link rel="stylesheet" href="/static/pollenvision/css/base.css">
-    <script src="/static/pollenvision/js/script.js"></script>
     <link rel="stylesheet" href="/static/pollenvision/css/header.css">
     <link rel="stylesheet" href="/static/pollenvision/css/dashboard.css">
     <link rel="stylesheet" href="/static/pollenvision/css/historico.css">
@@ -14,11 +13,18 @@
     <link rel="stylesheet" href="/static/pollenvision/css/suporte.css">
     <link rel="stylesheet" href="/static/pollenvision/css/upload.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+    <script src="/static/pollenvision/js/script.js"></script>
 </head>
 <body>
     {% include 'pollenvision/partials/_heads.html' %}
     {% block content %}{% endblock %}
     {% include 'pollenvision/partials/_footer.html' %}
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!---Grafico--->
+    <script src="/static/pollenvision/js/graficoDashboard.js"></script>
+    <script src="/static/pollenvision/js/graficorResultado.js"></script>
+    <script src="/static/pollenvision/js/graficoRelatorios.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="/static/pollenvision/js/carrossel.js"></script>
 </body>
 </html>
