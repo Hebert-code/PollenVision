@@ -6,22 +6,29 @@
         <p>Arraste e solte as imagens ou clique no botão abaixo</p>
     </div>
     <div class="upload_container_up">
-        <form method="POST" enctype="multipart/form-data">
+        <form method="POST" enctype="multipart/form-data" class="form_up">
             {% csrf_token %}
-            <div class="upload_container_arrasta">
+            <div 
+                class="upload_container_arrasta"
+                id="dropArea"
+                ondragover="event.preventDefault()" 
+                ondrop="handleDrop(event)"
+            >
                 <img src="/static/pollenvision/img/upload.svg" alt="">
                 <p>Arraste e solte sua imagem aqui</p>
             </div>
-            <div>
-                <label for="plant_id">ID da Planta:</label>
-                <input type="text" name="plant_id" id="plant_id" placeholder="Digite o ID da planta">
-            </div>
-            <div>
-                <label for="image_path">Selecione uma imagem:</label>
-                <input type="file" name="image_path" accept="image/*" required>
-            </div>
-            <div class="upload_container_up_button">
-                <button type="submit">Upload Image</button>
+            <div class="form_up_campos">
+                <div class="form_up_campos_campo">
+                    <label for="plant_name">Nome da Planta:</label>
+                    <input type="text" name="plant_name" id="plant_name" required>
+                </div>
+                <div>
+                    <label for="image_path">Imagem da Planta:</label>
+                    <input type="file" name="image_path" id="image_path" accept="image/*" required>
+                </div>
+                <div class="upload_container_up_button">
+                    <button type="submit">Upload Image</button>
+                </div>
             </div>
         </form>
     </div>

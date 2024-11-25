@@ -2,26 +2,33 @@
 {% block content %}
     <section class="resultado_container">
         <img src="/static/pollenvision/img/planta.svg" alt="">
-        <div class="resultado_container_id">
-            <h1>Planta: PM1234</h1>
-            <P>Visão geral dos resultados de análise</P>
-        </div>
-        <div class="resultado_container_result">
-            <div class="resultado_container_result_card">
-                <p>Viabilidade</p>
-                <h1>94%</h1>
-                <p>+2%</p>
+        {% if analysis_result %}
+            <div class="resultado_container_id">
+                <h1>Planta: {{ analysis_result.plant.plant_name }}</h1>
+                <P>Visão geral dos resultados de análise</P>
             </div>
-            <div class="resultado_container_result_card">
-                <p>Quantidade de grãos</p>
-                <h1>70</h1>
-                <p>-5</p>
+            <div class="resultado_container_result">
+                <div class="resultado_container_result_card">
+                    <p>Viabilidade</p>
+                    <h1>{{ analysis_result.viability }}%</h1>
+                    <p>{{ analysis_result.error }}%</p>
+                </div>
+                <div class="resultado_container_result_card">
+                    <p>Quantidade de grãos</p>
+                    <h1>{{ analysis_result.grain_count }}</h1>
+                    <p>-{{ analysis_result.error }}</p>
+                </div>
+                <div class="resultado_container_result_card">
+                    <p>Taxa de erro</p>
+                    <h1>{{ analysis_result.error }}%</h1>
+                    <p>-0.2%</p>
+                </div>
             </div>
-            <div class="resultado_container_result_card">
-                <p>Taxa de erro</p>
-                <h1>1.5%</h1>
-                <p>-0.2%</p>
-            </div>
-        </div>
+        {% else %}
+            <p>Nenhuma análise encontrada.</p>
+        {% endif %}
+        <div class="graficoresult">
+            <canvas id="grafico-resultado" style="width: 800px; height: 554px;"></canvas>
+        </div>        
     </section>
 {% endblock %}

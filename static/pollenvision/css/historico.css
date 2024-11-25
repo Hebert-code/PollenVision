@@ -1,14 +1,17 @@
 .historico {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     margin-bottom: 60px;
+    justify-content: space-evenly;
+    padding: 10%;
 }
 
 .historico_containers {
     display: flex;
     flex-direction: column;
     width: 100%;
+    padding-left: 150px;
 }
 
 .historico_container {
@@ -41,13 +44,12 @@
 
 .historico input {
     width: 100%;
-    height: 44px;
+    height: 36px;
     border: 1px solid #ddd;
     padding: 12px;
     border-radius: 4px;
     font-size: 14px;
     box-sizing: border-box;
-    margin-bottom: 40px;
 }
 
 .historico button {
@@ -68,12 +70,13 @@
 }
 
 .form-historico-campos {
-    width: 100%;
-    max-width: 520px;
+    width: 520px;
+    height: 368px;
 }
 
 .form-historico-campos-campo {
-    width: 100%;
+    width: 520px;
+    height: 64px;
     margin-bottom: 40px;
 }
 

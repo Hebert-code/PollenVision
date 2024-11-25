@@ -10,7 +10,7 @@
         </div>
     </section>
     <hr>
-    <section class="metricas">
+    <section class="metricas ">
         <div class="metricas_painel">
             <h1>Painel de Métricas</h1>
             <div class="metricas_painel_cards">
@@ -22,7 +22,6 @@
                 <div class="metricas_painel_cards_card">
                     <p>Histórico de Análise</p>
                     <h1>{{ historico_analise }}</h1> 
-                    <p>-2</p>
                 </div>
                 <div class="metricas_painel_cards_card">
                     <p>Taxa de erro</p>
@@ -33,33 +32,31 @@
         </div>
         
         <div class="metricas_painel">
-    
+            <canvas id="grafico-dashboard" style="width: 700px; height: 400px;"></canvas>
         </div>
     </section>
     <hr>
     <section class="analises">
         <div class="analises_titulo">
             <h1>Plantas</h1>
-            <div>
-                <input type="text" placeholder="Digite o id da planta">
-            </div>
+
         </div>
         <div class="carrossel">
-            <div class="carrossel_interno">
-            {% for resultado in resultados %}
-                <div class="carrossel_interno_item">
-                    <img src="/static/pollenvision/img/planta.svg" alt="">
-                    <div>
-                        <p>{{ resultado.analysis_date|date:"m/d/Y" }}</p>
-                        <p>Viabilidade: {{ resultado.viability }}%</p>
-                        <h4>Planta: {{ resultado.plant.id }}</h4>
-                    </div>
+            <div class="carrossel-lista">
+              {% for resultado in resultados %}
+                <div class="carrossel-item"> <!-- CARD-item -->
+                  <img src="/static/pollenvision/img/planta.svg" alt="">
+                  <div>
+                    <p>{{ resultado.analysis_date|date:"m/d/Y" }}</p>
+                    <p>Viabilidade: {{ resultado.viability }}%</p>
+                    <h4>Planta: {{ resultado.plant.plant_name }}</h4>
+                  </div>
                 </div>
-            {% endfor %}
+              {% endfor %}
             </div>
-            <button class="carousel-control prev" id="prev">&#10094;</button>
-            <button class="carousel-control next" id="next">&#10095;</button>
-        </div>
+            <button class="prev">◀</button>
+            <button class="next">▶</button>
+          </div>
     </section>
     <hr>
 
@@ -102,4 +99,5 @@
         </div>
     </section>
     <hr>
+
 {% endblock %}
