@@ -94,8 +94,12 @@ pollenvision/
    ```bash
    python manage.py runserver
    ```
+7. Rodar o Scipt para baixar os pesos
+   ```bash
+   python static/yolo/yologdow.py
+   ```
 
-7. Acesse o projeto em `http://localhost:8000`.
+8. Acesse o projeto em `http://localhost:8000`.
 
 ## Estrutura de Pastas
 
