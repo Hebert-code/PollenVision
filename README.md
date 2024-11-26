@@ -94,7 +94,7 @@ pollenvision/
    ```bash
    python manage.py runserver
    ```
-7. Rodar o Scipt para baixar os pesos
+7. Rodar o Script para baixar os pesos
    ```bash
    python static/yolo/yologdow.py
    ```
