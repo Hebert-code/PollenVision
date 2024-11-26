@@ -1,14 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Poppins:wght@400;600&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+     font-family: 'Poppins'
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     line-height: 1.6;
+    background-color: #f7f7f7;
 }
 
 header {
@@ -66,11 +68,15 @@ nav ul li a {
     justify-content: center;
     align-items: center;
     padding: 30px;
-    background-color: #f4f4f4;
-    flex-wrap: wrap;
+    background: linear-gradient(135deg, #f7f7f7, #ffffff);
+    
 }
 
 .hero-text {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: 600;
     max-width: 50%;
     padding: 50px;
 }
@@ -114,8 +120,11 @@ nav ul li a {
 
 /* Seção de produtos */
 .produto {
+    font-family: 'Poppins';
+    color: #fff;
     text-align: center;
     padding: 50px 0;
+    background: linear-gradient(136deg, rgba(243,201,94,1) 0%, rgba(40,100,49,0.9472163865546218) 56%);
 }
 
 .produto-container {
@@ -123,33 +132,57 @@ nav ul li a {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+    padding: 10px;
 }
 
 .produto-card {
-    box-shadow: -4px 18px 35px -17px rgba(0, 0, 0, 1);
-    border: 1px solid #696868;
-    border-radius: 15px;
-    max-width: 300px;
-    text-align: center;
-    font-size: 15px;
-    flex-basis: 100%;
+ color: #333;
+ padding: 10px;
+ background: linear-gradient(135deg, #f7f7f7, #ffffff);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
 }
 
-.produto-card img {
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    width: 100%;
-    height: auto;
+.produto-card:hover {
+  transform: translateY(-5px);
 }
 
+.produto-image img {
+  width: 100%;
+  height: auto;
+}
+
+.produto-content {
+  padding: 20px;
+}
+
+.produto-title {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  padding-inline: 5px;
+}
+
+.produto-description {
+  font-size: 14px;
+  color: #666;
+}
 .produto-card h1 {
+    padding-inline: 10px;
     font-size: 20px;
 }
 
 /* Seção de equipe */
 .team {
+    color: #f7f7f7;
     padding: 50px 0;
     text-align: center;
+    background: rgb(9,14,10);
+    background: linear-gradient(298deg, rgba(9,14,10,0.9472163865546218) 28%, rgba(243,201,94,1) 96%);
 }
 
 .team-container {
@@ -213,10 +246,12 @@ footer a {
 
     .produto-container, .team-container {
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .produto-card, .cliente-card {
-        max-width: 100%;
+       max-width: 70%;
     }
 }
 

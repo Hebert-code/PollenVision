@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -36,13 +37,17 @@ nav ul li a {
     text-decoration: none;
 }
 
-
 .menu-hamburguer {
     display: none;
     font-size: 30px;
     cursor: pointer;
     color: #fff;
 }
+
+.close-btn {
+    display: none;
+}
+
 
 @media (max-width: 768px) {
     .menu-hamburguer {
@@ -52,30 +57,37 @@ nav ul li a {
     #nav-links {
         display: none;
         flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 0;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100%;
+        width: 250px;
         background-color: #1c1c1c;
-        width: 100%;
-        text-align: right;
-        padding: 20px;
+        padding-top: 60px;
         z-index: 1;
-    }
-
-    #nav-links li {
-        display: block;
-        margin-bottom: 10px;
-    }
-
-    #nav-links li a {
-        color: #fff;
-        padding: 10px 20px;
-        display: block;
-        text-align: right;
+        text-align: center;
+        transition: right 0.3s ease;
     }
 
     #nav-links.active {
+        right: 0;
         display: flex;
+    }
+
+    #nav-links li {
+        margin-bottom: 20px;
+    }
+
+    .close-btn {
+        display: block;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 30px;
+        cursor: pointer;
+        position: absolute;
+        top: 10px;
+        right: 20px;
     }
 }
 
@@ -85,7 +97,6 @@ nav ul li a {
 }
 
 .logo img {
-   
     width: 50px;
     margin-right: 10px;
 }
@@ -99,23 +110,9 @@ nav ul li a {
 }
 
 nav span {
-   
     font-family: "ABeeZee", sans-serif;
-     font-weight: 400;
+    font-weight: 400;
     font-style: normal;
     color: #fff;
     font-size: 20px;
-}
-nav ul {
-    list-style-type: none;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
 }
